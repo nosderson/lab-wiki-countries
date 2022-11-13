@@ -1,6 +1,6 @@
 
 function GoogleMaps({ country }) {
-    console.log({ country });
+ 
     return (
 
         <div id="map-container-google-2" className="z-depth-1-half map-container" style={{ height: '300px', width: '100%' }}>

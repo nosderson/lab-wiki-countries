@@ -14,6 +14,7 @@ function App() {
         <div className="row">
           <CountriesList allCountries={countries} />
           <Routes>
+            <Route path="/" element={<Navbar />} />
             <Route path="/:id" element={<CountryDetails allCountries={countries} />} />
           </Routes>
         </div>

@@ -1,11 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 import GoogleMaps from './GoogleMaps';
 
-
 export default function CountryDetails({ allCountries }) {
     const { id } = useParams();
+   
+    function selectCountry(id) {
+        return allCountries.find((country) => country.alpha3Code === id)
+    };
 
-    const country = allCountries.find(country => country.alpha3Code === id)
+    const country = selectCountry(id);
     const currencies = [];
     currencies.symbol = "Não Informado";
     currencies.name = "Não Informado"
@@ -75,8 +78,7 @@ export default function CountryDetails({ allCountries }) {
 
                                     <li key={countryBorder} className="list-group-item list-group-item-action border-0">
                                         <Link to={`/${countryBorder}`}>
-                                            {countryBorder}
-                                        </Link>
+                                        {selectCountry(countryBorder).name.common}                                        </Link>
                                     </li>
 
                                 )}
